@@ -1,0 +1,36 @@
+<script language="javascript">
+
+$(document).ready(function() {
+    if( $("input#b1").attr('data-state') == "true" ) {
+      location.href="/?cont="+$("input#b1").attr('data-state');
+    }
+});
+
+function ContinueTest() {
+  location.href="/?cont=true";
+}
+function OneMoreTest() {
+  location.href="/?cont=false";
+}
+</script>
+<input type="button" name="b1" id="b1" value="테스트계속" data-state=<%=$get_next%> onclick="javascript:ContinueTest();"/>
+<input type="button" name="b2" id="b2" value="테스트한번만" onclick="javascript:OneMoreTest();"/>
+
+<table>
+  <tr>
+    <th>PI1</th>
+    <td><%= @result[0] %></td>
+  </tr>
+  <tr>
+    <th>PI2</th>
+    <td><%= @result[1] %></td>
+  </tr>
+  <tr>
+    <th>PI3</th>
+    <td><%= @result[2] %></td>
+  </tr>
+  <tr>
+    <th>PI4</th>
+    <td><%= @result[3] %></td>
+  </tr>
+</table>
